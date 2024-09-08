@@ -1,0 +1,148 @@
+
+.search-btn, .close-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    
+    border:none;
+    cursor: pointer;
+    position: absolute;
+    bottom:20px;
+   
+
+ }
+ .close-btn{
+    color:rgb(224, 22, 22);
+    z-index: -1;
+ }
+ .search-box{
+    width: 40px;
+    height: 40px;
+    padding:15px ;
+    border-radius: 25px;
+   
+    
+    outline: none;
+    border: none;
+ }
+ .active .search-box{
+    width: 210px;
+    height: 5px;
+ }
+ .active .search-btn{
+    transform: translate(200px,15px) ;
+    background-color:transparent;
+    color: black;
+ }
+ .active .close-btn{
+    transform: translate(250px,15px);
+   z-index: 0;
+   
+ }
+ .icon{
+    size: 50px;
+ }
+ .container{
+border-radius: 7px;
+ }
+ p:hover{
+    color: blue;
+ }
+ .ab{
+    margin-bottom: 2px;
+    border-radius: 6px;
+ }
+ .abc{
+    border-radius: 10px;
+ }
+ h2:hover{
+    color:black;
+ }
+ .pic{
+   
+    background-image: url(https://images.hdqwalls.com/download/mountain-scenery-morning-sun-rays-4k-kf-1920x1080.jpg);
+    height: 300px;
+    width: auto;
+ }
+ a{
+    text-decoration: none;
+ }
+ a:hover {
+    color:blueviolet;
+ }
+
+ <!--dropdown-->
+ .button{
+   background-color:white;
+   color:purple;
+   padding:12px;
+   font-size:20px;
+   border:none;
+}
+.dropdown{
+   position:relative;
+   display: inline-block;
+   padding: 15px;
+}
+.content{
+   display:none;
+   position:absolute;
+   background-color:paleturquoise;
+   min-width:100%;
+   box-shadow: 0px 7px 14px 0px rgba(0,0,0,0.9);
+   max-height: 200px;
+   overflow-y: scroll;
+   border-radius: 10px;
+   
+}
+.content a{
+   color:black;
+   padding:12px 6px;
+   text-decoration:none;
+   display:block;
+}
+.content a:hover{
+   background-color:rgb(94, 176, 214);
+}
+.dropdown:hover .content {
+           display: block;
+     }
+.dropdown:hover .button{
+   background-color:rgb(106, 179, 252);
+}
+.centered{
+   font-size: 40px;
+   font-weight: 100;
+   font-style: oblique;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input[type=text]{
+   justify-content: right;
+   text-align: center;
+   width:260px
+}
+#und a{
+   text-decoration: none;
+}
+#und{
+   padding: 25px;
+}
+
+.but{
+   background-color: skyblue;
+   height: 40px;
+   width: 250px;
+   
+   border: 2 px solid black;
+   border-radius: 5px;
+   text-align: center;
+   font-size: larger;
+}
+.m{
+   font-size: larger;
+}
+
+#try{
+   padding: 20px;
+   margin: auto;
+}

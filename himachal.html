@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+<style>
+    
+
+    body{
+        margin: 0;
+        font-family: sans-serif;
+        background: #111;
+    }
+    *{
+        box-sizing: border-box;
+    }
+    h1,h3{
+        font-weight: 400;
+    }
+    .weather-app{
+        min-height: 100vh;
+        background-image: url(https://static2.tripoto.com/media/filter/tst/img/15546/TripDocument/1454226571_mcleod_ganj_dharamkot_dharmsala_himachal_pradesh_india_april_2014_1.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        position: relative;
+        transition: 500ms;
+        opacity: 1;
+    }
+    .weather-app::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;   
+        height: 100%;
+        background: rgba(0,0,0,0.3);
+        z-index: 0;
+    }
+    .container{
+         position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content:space-between ;
+        align-items: flex-start;
+        flex-direction: column; 
+        padding: 2em 3em 4em 3em;
+
+    }
+    .container >div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .city-time,.temp,.weather{
+        margin: 0 1em;
+    }
+    .city-time h1{
+        margin: 0;
+        margin-bottom: 0.2em;
+        font-size: 3em;
+
+    }
+    .temp{
+        font-size: 7em;
+        margin: 0;
+    }
+    .weather img{
+        display: block;
+        margin: 0.5em 0;
+    }
+    .panel{
+        position: absolute;
+        width: 40%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: rgba(110,110,110,0.25);
+        box-shadow:  0 8px 32px 0 rgba(0,0,0,0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(225,225,225,0.18);
+        z-index: 1;
+        padding: 3em 2em;
+        overflow-y: scroll;
+
+    }
+    .panel form{
+        margin-bottom: 3em;
+    }
+    .submit{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1.5em;
+        margin: 0;
+        border: none;
+        outline: none;
+        background: #fa6d1b;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.2em;
+        transition: 0.4s;
+
+    }
+    .submit:hover{
+        background: #fff !important;
+        color: #000;
+
+    }
+    .search {
+        background: none;
+        border: none;
+        border-bottom: 1px #ccc solid;
+        padding: 0 1em 0.5em 0;
+        width: 80%;
+        color: #fff;
+        font-size: 1.1em;
+    }
+    .search:focus{
+        outline: none;
+    }
+    .search::placeholder{
+        color: #ccc;
+    }
+    .panel ul{
+        padding: 0 0 1em 0;
+        margin: 2em 0;
+        border-bottom: 1px #ccc solid;
+    }
+    .panel ul li{
+        color: #ccc;
+        margin: 2.5em 0;
+
+    }
+    .panel ul h4{
+        margin: 3em 0;
+    }
+    .city{
+        display: block;
+       cursor: pointer;
+    }
+    .city:hover{
+        color: #fff;
+    }
+    .details li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+<div class="weather-app">
+    <div class="container">
+        <h3 class="brand">
+            THE WEATHER
+        </h3>
+   <div>
+    <h1 class="temp">7&#176;</h1>
+    <div class="city-time">
+        <h1 class="name"> Himachal</h1>
+    <small>
+        <span class="time"> 12:09</span>
+        -
+        <span class="date">
+            thursday  jan 11
+        </span>
+    </small>
+    
+    
+    </div>
+    <div class="weather">
+        <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-mbe-icon-sunny-weather-sun-commercial-element-icon-sunny-weather-png-image_4049084.jpg" alt="" class="icon" width="50"height="50"/>
+        
+        <span class="condition">Cloudy</span>
+    </div>
+</div>
+</div>
+<div class="panel">
+    <p  id="locationInput">TOP STORIES </p> <hr>
+
+ 
+    <img src="https://www.swantour.com/blogs/wp-content/uploads/2019/01/Monthly-Weather-in-Himachal-Pradesh.jpg" width="540" height="300">
+  <p> 
+    Himachal Pradesh in grip of peak winter spell, Sissu Lake freezes at -15 degrees</p>
+ 
+ 
+ 
+ <hr>
+ <ul class="details">
+    <h4>Weather Details </h4>
+    <li>
+        <span>Cloudy</span>
+        <span class="cloud">69%</span>
+    </li>
+    <li>
+        <span>Humidity</span>
+        <span class="Humidity">46%</span>
+    </li>
+    <li>
+        <span>wind</span>
+        <span class="wind">8km/h</span>
+    </li>
+ </ul>
+</div>
+
+
+    
+</body>
+</html>
